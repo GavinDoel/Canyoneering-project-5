@@ -1,0 +1,31 @@
+/*Changes made: The top menu color, body background, title
+image posistion, title image gradiant, title image overlay, 
+font-family, button color, button text. Website now has dark 
+theme and can toggle between dark and light theme.*/
+
+body {
+    background-color: black;
+    color:white;
+    font-family: "Papyrus", "Courier New", Fantasy;
+}
+                    /* Menu Items */
+.menu {
+    grid-area: menu;
+    background-color: #e48447;
+}
+.menu a:hover {
+    background-color: lightgray;
+    color: #531c0f;
+    padding: 15px 10px 15px 10px;
+    border-radius: 10px;
+}
+.title {
+    background:linear-gradient(0deg, grey, rgba(255, 0, 150, 0.3)), url("title_image.jpg");
+}
+
+button {
+    color: black;
+    background-color: orange;
+    font-family: "Papyrus", "Courier New", Fantasy;
+}
+                    /* Contact Info */

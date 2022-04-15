@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Canyoneering Utah</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <div class="container">
+        <!--menu div-->
+    <menu class="menu" id="menu">
+        <a class="active" href="#title">Home</a>
+        <a href="#contact" onclick="contactClick()">Contact us</a>
+        <a href="#redirectAreas">Areas</a>
+    </menu>
+        <!-- title div-->
+    <titleDiv class="title" id="title"> 
+        <h1> Canyoneering Utah</h1>
+        <h4 id="quote"> A journey of a thousand miles must begin with a single step. -Lao Tzu</h4>
+        <button onclick="addCss()" id="toggleButton">Dark Mode</button>
+        <a href="#visitorFormRedirect"><button onclick="visitorForm()" id="log_visit">Log Visit</button></a>
+    </titleDiv>
+    <intro class="intro">
+        <p>Canyoneering is a type of mountaineering that involves travelling in canyons using a variety of techniques that may include other outdoor activities such as walking, scrambling, climbing, jumping, abseiling (rappelling), and swimming. Although non-technical descents such as hiking down a canyon (canyon hiking) are often referred to as canyoneering, the terms canyoning and canyoneering are more often associated with technical descents — those that require abseils (rappels) and ropework, technical climbing or down-climbing, technical jumps, and/or technical swims.</p>
+    <img src="introImg.jpg">
+    </intro>
+        <h1 id="redirectAreas"> </h1>
+        <!-- North Wash div -->
+    
+    <a href="#redirectNorth" class="north_wash" id="northWash" onclick="northClick()">
+        <h1 class="areaTitle" id=areasRef>North Wash</h1>
+    </a>
+        <!-- Robbers Roost div -->
+    <a href="#redirectRobb" class="robbers_roost" onclick="robbClick()"">
+        <h1 class="areaTitle"> Robbers Roost</h1>
+        <!-- Escalante div -->
+    </a>
+    <a href="#redirectEsc" class="escalante" onclick="escClick()">
+        <h1 class="areaTitle">Escalante</h1>
+    </a>
+        <!-- Hidden North Wash info -->
+    <northInfo id="northInfo" class="info">
+        <h2 id="redirectNorth"> North Wash </h2>
+        <p> State Route 95, Utahs Bicentennial Highway, runs through North Wash toward the northern end of Lake Powell. Aside form the highway traffic, the most likely reason most folks visit North Wash is to climb, hike, and canyoneer. The highway offers very easy access to some of the most popular and extraordinary techincal canyon adventures. From the "Irish Canyons" to the "Hog Canyons", there are canyons here for all levels of experience. While there is a restroom at Hog Springs Picnic Area, no other facilities are developed in North Wash. There is plenty to see and do in North Wash, but if you feel like reaching out, North Wash is also centrally located and a short drive from other popular hiking areas such as Poison Spring, Trachyte, Maidenwater, and Trail Canyons.</p>
+        <figure>
+            <img src="northWashInfo.jpg" alt="NorthWash">
+            <figcaption>North Wash, Utah, 2020.</figcaption>
+        </figure>
+        
+    </northInfo>
+        
+        <!-- Hidden Robb Roost info -->
+    <robbInfo id="robbInfo" class="info">
+        <h2 id="redirectRobb"> Robbers Roost </h2>
+        <p> Robbers Roost is a remote area of desert country in central Utah, cut by a maze of spectacular canyons. Named from its history as a hideout of the Butch Cassidy gang, the Roost is located between Hanksville on the west and Canyonlands Maze District on the east, with most canyons draining into the Dirty Devil River, or north into Horseshoe Canyon. The area is very isolated, there are miles and miles of canyons and routes, there is a low probability of encountering others, and the canyons are not patrolled regularly. Other than some identifed trailheads there are no developed facilities in the Roost area. These circumstances require the visitor to be experienced and come prepared.</p>
+        <iframe width="440" height="248" src="https://www.youtube.com/embed/8gbIf3sOifs?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </robbInfo>
+        
+        <!-- Hidden Escalante info -->
+    <escInfo id="escInfo" class="info">
+        <h2 id="redirectEsc"> Escalante </h2>
+        <p>Driving out the Hole-In-The-Rock road, only piñon-juniper forest, sagebrush, sand and the bulk of Fifty Mile Mountain greet the eye. No clue is given to the marvels carved into the stone but a scant mile away. And marvelous they are: the Canyons of the Escalante provide oases of lush greenery between soaring sandstone walls. The vast area is dotted with abundant arches, lush streams and lovely vistas. It is quite a place, not the least for its vastness and variety.</p>
+        <p> In Escalante there is plenty of variety and adventures possible, thanks to steady supplies of beautiful water in many canyons. The number of published technical thrash-fests are few; the number of divine, incredible explorations high. The level of adventure is high - please help keep it this way. Endowed with beauty rather than grandeur, the Escalante is an area of long and marvelous canyons that make perfect multi-day wilderness journeys. </p>
+        <img src="escalanteInfo.jpg">
+    </escInfo>
+        <!-- contact -->
+    <contact class=contact_area>
+        <my_info class="contact" id="contact" >
+            <h1 class="contact_header"> Contact us </h1>
+            <h4 class="phone">Phone <br>(801) 867-5309</h4>
+            <h4 class="email">Email <br>doel.gavin@gmail.com</h4>
+            <h4 class="address">Address <br> 800 W University, Orem, UT </h4>
+        </my_info>
+    </contact>
+        <!-- footer div -->
+    <footer class="footer" >
+        <p>Copyright note: All content on this page is used for education purposes only. Some contenet may not be original work. Last edited on: 03/17/2022</p>
+    </footer>
+
+
+
+
+
+
+
+
+
+        
+
+                        <!-- Visitor Form -->
+    <div id="visitorFormRedirect"></div>
+    <div id="success">
+      Thank you for logging your visit!
+    </div>
+    <v_form id="visitorForm">
+    <title>Visitor Form</title>
+  
+ 
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+  <div class="form_container">
+    <h1 class="form_title">Visitor Form</h1>
+    <form id="myform" novalidate>
+      <ul class="flex">
+        <li class="section-display">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first-name" 
+                placeholder="Enter your first name here" required>
+          <div id = "first_error" class="errorMsg">First Name is Required</div>
+        </li>
+        <li >
+          <label for="last-name">Last Name</label>
+          <input type="text"  id="last-name" name="last-name" placeholder="Enter your last name here">
+          <div id="last_error" class="errorMsg">Last Name is Required</div>
+        </li>
+        <li >
+          <label for="address">Address</label>
+          <input type="text"  id="address" name="address" placeholder="Enter your address here">
+          <div id="address_error" class="errorMsg">Address Required</div>
+        </li>
+        <li >
+          <label for="city">City</label>
+          <input type="text"  id="city" name="city" placeholder="Enter your city here" required>
+          <div id="city_error" class="errorMsg">City Required</div>
+        </li>
+        <li >
+          <label for="state">State</label>
+          <input type="text"  id="state"  name="state" placeholder="Enter your state here">
+          <div id="state_error"class="errorMsg">State Required</div>
+        </li>
+        <li >
+          <label for="zip">Zip</label>
+          <input id="zip" name="zip" type="text" placeholder="Enter a zip code here" >
+          <div id="zip_error" class="errorMsg">You must enter a valid Zip Code</div>
+        </li>
+        <li >
+          <label for="email">Email</label>
+          <input type="email" id="email_form" name="email" placeholder="Enter your email here" >
+          <div id="email_error" class="errorMsg">You must enter a valid email</div>
+        </li>
+        <li>
+          <label for="phone">Phone</label>
+          <input type="phone" id="phone" placeholder="Enter your phone here">
+          <div id="phone_error" class="errorMsg">You must enter a valid phone number</div>
+        </li>
+        <li>
+          <h2>How did you find my page</h2>
+        </li>
+        <li>
+          <input type="checkbox" id='google' name='find-page' value="google">
+          <label for="google">Google Search</label>
+        </li>
+        <li>
+          <input type="checkbox" id='friend' name='find-page' value="friend">
+          <label for="friend">Friend</label>
+        </li>
+        <li>
+          <input type="checkbox" id='newspaper' name='find-page' value="newspaper">
+          <label for="newspaper">News Paper</label>
+          <!--NOte that I have added the errorMsg div under the 'newspaper' checkbox.  When marking this group as 'valid' or 'invalid' you can just call setElementValidity on this one element instead of all of them 
+          -->
+          <div id="box_error" class="errorMsg">You must check at least one</div>
+        </li>
+        
+        <li>
+          <label for="comment">Comments</label>
+          <textarea rows="4" id="comment" placeholder="Enter your comments here" required></textarea>
+        </li>
+        
+        <li>
+          <button id="formSubmit" type="submit" onclick="Validate()">Send</button>
+        </li>
+      </ul>
+    </form> 
+    <script> let form = document.getElementsByTagName("form")[0];
+form.addEventListener("submit", (e) => {
+    e.default();
+    document.getElementById("success").style.display = "block";
+  
+});
+    </script>
+    
+    </div>
+</v_form>   
+    </div>
+      <script src="validation.js"></script>
+  </body>
+</html>

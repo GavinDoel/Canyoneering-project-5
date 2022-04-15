@@ -1,0 +1,623 @@
+/*
+Changes made on Submission 3: I haven't recieved my grade on
+the last assignment yet, so I couldn't make changes that were
+recomended by the grader. Changes I was able to implement though
+were: documenting my HTML code to named divs instead of default 
+divs, and I made the contact area mobile friendly.
+
+Changes made since on submission 2: I was able to make the
+contact section streatch out and make the page seem less
+empty. I've added another picture as well. My JS file is
+properly commented, indentation is corrected, and there is a
+breif disclaimer. */
+
+html { scroll-behavior: smooth; }
+                /* Media layout */
+@media screen and (max-width: 768px) {
+html { scroll-behavior: smooth; }
+.title h1{
+    font-size: 40px;
+}
+.title h4 {
+    font-size: 20px !important;
+    margin: 10px !important;
+}
+.intro img{
+    display: none;
+}
+.intro p{
+    grid-area: intro;
+    margin-top: 10px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+.north_wash, .robbers_roost, .escalante {
+    margin: 30px 3px 0px 3px !important;
+    font-size: 10px !important;
+    height: 120px;
+    width: 150px;
+    font-height: 20px;
+}
+.areaTitle {
+    margin-top: 45px !important;
+}
+                    /* North Wash Info */
+
+#northInfo {
+    grid-area: info;
+}
+#northInfo h2{
+    margin-top: -150px !important;
+}
+#northInfo p {
+    float: left;
+    width: 85% !important;
+    font-size: 10px;
+}
+#northInfo img{
+    float: right;
+    width: 100%;
+    height: 300px;
+    width: 440px !important;
+    border-radius: 8px;
+    margin-left: 10px;
+}
+#northInfo figcaption {
+    float: right;
+    margin-right: 10px;
+}
+                    /* Robbers Roost Info */
+#robbInfo {
+    grid-area: info;
+}
+#robbInfo h2 {
+    margin-top: -130px !important;
+}
+#robbInfo p {
+    float: left;
+    width: 85% !important;
+    font-size: 10px;
+}
+#robbInfo iframe {
+    float: right;
+    margin-right: 40px;
+    border-radius: 10px;
+}
+                    /* Escalante Info */
+#escInfo {
+    grid-area: info;
+    
+}
+#escInfo h2 {
+    margin-top: -200px !important;
+}
+#escInfo p {
+    float: left;
+    width: 85% !important;
+    font-size: 10px;
+}
+#escInfo img {
+    float: right;
+    width: 100%;
+    height: 270px;
+    width: 440px !important;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-top: 40px !important;
+}
+
+                            /* Contact area */
+.contact {
+    grid-area: contact;
+}
+.email {
+    margin: 10px !important;
+
+}
+.phone {
+    margin: 10px !important;
+
+}
+.address {
+    margin: 10px !important;
+}
+                            /* Visitor Form */
+v_form {
+    grid-area: form;
+    font: normal 12px/1 sans-serif;
+    padding: 10px; 
+    margin-top: 40px;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    height: 550px;
+}
+.flex button {
+    padding: 5px 10px !important;
+    margin-top: 32px !important;
+    margin-left: -40px !important;
+    font: 12px !important;
+}
+.flex button:hover {
+    font: 10px !important;
+    padding: 5px 12px;
+}
+}
+
+                /* regular layout */
+
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: .2fr 1fr .2fr .6fr .6fr 0.2fr .2fr .1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "menu menu menu"
+    "title title title"
+    "intro intro intro"
+    "north_wash robbers_roost escalante"
+    "info info info"
+    "contact contact contact"
+    "form form form"
+    "footer footer footer";
+}
+
+.menu {
+    grid-area: menu;
+    background-color: black;
+    margin: -10px;
+    width: 100%;
+    position: fixed;
+    padding-bottom: 35px;
+    padding-top: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    margin-top: 20px;
+    position: relative;
+    top: 10px;
+}
+.menu a:hover {
+    background-color: white;
+    color: black;
+    padding: 15px 10px 15px 10px;
+    border-radius: 10px;
+}
+
+.title { 
+    grid-area: title;
+    margin: -50px -10px 20px -10px ;
+    color: white;
+    background-image: url(title_image.jpg);
+    height: 450px;
+    background-size: cover;
+    background-position: bottom left;
+    text-align: center;
+    font-size: 30px; 
+       }
+.title h1 {
+    margin-top: 100px;
+}
+.intro {
+    grid-area: intro;
+    margin-top: 60px;
+}
+.intro p {
+    font-size: 20px;
+    float: left;
+    margin-left: 600px;
+    margin-right: 50px;  
+}
+.intro img{
+    float: left;
+    grid-area:introImg;
+    height: 300px;
+    width: 400px;
+    margin-left: 75px;
+    margin-top: -260px;
+    border-radius: 20px;
+}
+.north_wash { 
+    grid-area: north_wash;
+    background-image: url(north_wash.jpg);
+    background-size: cover;
+    margin: 80px 20px 10px 20px;
+    border-style: solid;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+.areaTitle {
+    margin-top: 110px;
+}
+
+.north_wash:hover {
+    margin: 50px 10px 0px 10px;
+    box-shadow: 10px 10px 8px grey ;
+    display: block;
+    text-decoration: none;
+}
+
+.robbers_roost { 
+    grid-area: robbers_roost;
+    background-image: url(robbers_roost.jpg);
+    background-size: cover;
+    margin: 80px 20px 10px 20px;
+    border-style: solid;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+.robbers_roost:hover {
+    margin: 50px 10px 0px 10px;
+    box-shadow: 10px 10px 8px grey ;
+    text-decoration: none;
+}
+.escalante { 
+    grid-area: escalante;
+    background-image: url(escalante.jpg);
+    background-size: cover;
+    background-position: center right;
+    margin: 80px 20px 10px 20px;;
+    border-style: solid;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+.escalante:hover {
+    margin: 50px 10px 0px 10px;
+    box-shadow: 10px 10px 8px grey;
+    text-decoration: none;
+}
+.info {
+    grid-area: info;
+    display: none;
+}
+#quote{
+    font-style: italic;
+    font-size: 30px;
+}
+
+a {
+    margin-left: 30px;
+}
+                    /* North Wash Info */
+#northInfo {
+    grid-area: info;
+}
+#northInfo h2{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+#northInfo p {
+    float: left;
+    width: 55%;
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+#northInfo img{
+    width: 37%;
+    border-radius: 8px;
+    margin-left: 30px;
+}
+#northInfo figcaption {
+    float: right;
+    margin-right: 20px;
+}
+                    /* Robbers Roost Info */
+#robbInfo {
+    grid-area: info;
+    
+    margin-bottom: 230px;
+}
+#robbInfo h2 {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+#robbInfo p {
+    float: left;
+    width: 55%;
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+#robbInfo iframe {
+    float: right;
+    margin-right: 40px;
+    border-radius: 10px;
+}
+                    /* Escalante Info */
+#escInfo {
+    grid-area: info;
+}
+#escInfo h2 {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+#escInfo p {
+    float: left;
+    width: 55%;
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+#escInfo img {
+    float: right;
+    margin-top: -160px;
+    margin-right: 40px;
+    width: 37%;
+    border-radius: 8px;
+}
+#redirectAreas {
+    grid-area: intro;
+    visibility: none;
+    margin-top: 300px;
+    
+}
+                    /* Contact info */
+.contact_area {
+    grid-area: contact;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -200px;
+    background-image: url("contact_background.jpg");
+}
+.contact {
+    color: #ffb752;
+    margin-left: 20px;
+    grid-area: contact;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    display: none;
+    transition: width 2s;
+}
+.contact_header {
+    text-align: center;
+    margin-left: 30px;
+}
+.phone {
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+    font-size: 20px;
+    margin-right: 75%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ffcead;
+}
+.phone:hover {
+    background-color:white;
+    color: orange;
+}
+.email {
+    color: white;
+    text-align: left;
+    margin-top: -110px;
+    margin-right: 40%;
+    margin-left: 40%;
+    padding: 20px;
+    font-size: 20px;
+    background-color: #ffcead;
+    border-radius: 5px;
+}
+.email:hover {
+    background-color:white;
+    color: orange;
+}
+.address {
+    color: white;
+    text-align: left;
+    margin-top: -110px;
+    margin-right: 20px;
+    margin-left: 900px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: #ffcead;
+    border-radius: 5px;
+}
+.address:hover {
+    background-color:white;
+    color: orange;
+}
+                    /* Footer */
+.footer { 
+    grid-area: footer;
+    color: gray;
+    text-align: center;
+}
+                    /* Dark Mode Button */
+button:hover {
+    padding: 18px;
+    color: black;
+    background-color: white;
+}
+button {
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 15px;
+    border-radius: 20px;
+    transition-duration: 0.4s;
+}
+
+
+
+                /* Visitor Form */
+#visitorFormRedirect {
+    grid-area: form;
+    margin-top: -40px;
+}
+v_form {
+    display: none;
+    grid-area: form;
+    font: normal 12px/1 sans-serif;
+    background: #ff9257;
+    color: #fff;
+    padding: 10px;
+    border-radius: 15px;  
+    margin-top: 40px;
+    margin-left: 200px;
+    margin-right: 200px;
+    height: 510px;
+}
+.form_container {
+    grid-area: form;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+.form_container * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+   
+}
+
+#first_error {
+    display: none;
+    color: red;
+    margin-left: 5px;
+}
+#last_error {
+    display:none;
+    color: red;
+    margin-left: 5px;
+}
+#address_error {
+    display: none;
+    color: red;
+    margin-left: 5px;
+}
+#city_error {
+    display: none;
+    color: red;
+    margin-left: 5px;
+}
+#state_error {
+    display: none;
+    color: red;
+    margin-left: 5px;
+}
+#zip_error {
+    display: none;
+    color: red;
+    margin-left: 5px;
+}
+#email_error {
+    display: none;
+    color: red;
+    margin-left: 5px;
+}
+#phone_error {
+    display: none;
+    color: red;
+    margin-left: 5px;
+}
+#box_error {
+    display:none;
+    color: red;
+    margin-left: 5px;
+}
+#success {
+    grid-area: form;
+    display: none;
+    color: green;
+    font-size: 24px;
+    text-align: center;
+}
+
+.errorMsg {
+  color: red;
+}
+
+input.was-validated:invalid {
+  color: red;
+  border: 1px solid red;
+}
+
+input.was-validated:invalid ~ div.errorMsg {
+  display: block;
+}
+
+input:valid ~ div.errorMsg, input:invalid ~ div.errorMsg {
+  display: none;
+}
+
+
+.flex {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0 auto;;
+}
+
+.flex li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+    height: 20px;
+}
+
+.flex li li input,
+.flex li textarea {
+  padding: 5px;
+  font: normal 14px/1.5 sans-serif;
+}
+
+.flex button {
+  margin: auto;
+  padding: 15px 30px;
+  font: normal 14px/1.3 sans-serif;
+  border: none;
+  background: #D84315;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  border-radius: 4px;
+}
+
+.flex button:hover {
+    font: 18px;
+    padding: 18px 30px;
+    background: white;
+    color: #D84315;
+}
+
+.flex > li {
+  margin-bottom: 10px;
+}
+
+.flex > li > label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50px;
+          flex: 1 0 50px;
+  max-width: 200px;
+}
+
+.flex > li + * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100px;
+          flex: 1 0 100px;
+}
+
+.flex > input[type='radio'] ~ div.errorMsg,
+.flex > input[type='checkbox'] ~ div.errorMsg {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 200px;
+          flex: 1 0 200px;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=main.css.map */
